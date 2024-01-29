@@ -6,7 +6,7 @@
 #    By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 15:13:44 by ahibrahi          #+#    #+#              #
-#    Updated: 2024/01/25 17:01:11 by ahibrahi         ###   ########.fr        #
+#    Updated: 2024/01/29 16:48:58 by ahibrahi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar -rcs
 RM = rm -f
 
-FILES =  push_swap \
+FILES =  push_swap ft_atoi rules\
 
 GNL = get_next_line/GNL.a
 PRINTF = ft_printf/printf.a
