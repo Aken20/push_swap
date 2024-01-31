@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 08:06:20 by ahibrahi          #+#    #+#             */
-/*   Updated: 2024/01/31 08:07:38 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/01/31 12:35:02 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_add_to_a(t_stack **stack_a, t_stack *new)
 
 	if (!stack_a || !new)
 		return ;
-	if (*stack_a == NULL)
+	else if (*stack_a == NULL)
 		*stack_a = new;
 	else
 	{

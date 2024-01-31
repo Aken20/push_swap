@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:48:56 by ahibrahi          #+#    #+#             */
-/*   Updated: 2024/01/31 08:01:29 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/01/31 13:04:03 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	ra(t_stack **stack_a)
 		ft_stack_last(*stack_a)->next = p;
 		p->next = NULL;
 		*stack_a = tmp;
+		ft_printf(1, "ra\n");
 	}
 }
 
@@ -45,6 +46,7 @@ void	rb(t_stack **stack_b)
 		ft_stack_last(*stack_b)->next = p;
 		p->next = NULL;
 		*stack_b = tmp;
+		ft_printf(1, "rb\n");
 	}
 }
 
@@ -52,6 +54,24 @@ void	rb(t_stack **stack_b)
 
 void	rr(t_stack **stack_a, t_stack **stack_b)
 {
-	ra(stack_a);
-	ra(stack_b);
+	t_stack	*tmp;
+	t_stack	*p;
+
+	p = *stack_a;
+	if (p && p->next)
+	{
+		tmp = p->next;
+		ft_stack_last(*stack_a)->next = p;
+		p->next = NULL;
+		*stack_a = tmp;
+	}
+	p = *stack_b;
+	if (p && p->next)
+	{
+		tmp = p->next;
+		ft_stack_last(*stack_b)->next = p;
+		p->next = NULL;
+		*stack_b = tmp;
+	}
+	ft_printf(1, "rr\n");
 }

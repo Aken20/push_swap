@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 14:11:57 by ahibrahi          #+#    #+#             */
-/*   Updated: 2024/01/31 07:51:46 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/01/31 09:43:11 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 		p->next = *stack_a;
 		*stack_a = p;
 		*stack_b = tmp;
+		ft_printf(1, "pa\n");
 	}
 }
 
@@ -45,5 +46,6 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 		p->next = *stack_b;
 		*stack_b = p;
 		*stack_a = tmp;
+		ft_printf(1, "pb\n");
 	}
 }

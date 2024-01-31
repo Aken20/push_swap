@@ -6,13 +6,13 @@
 #    By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 15:13:44 by ahibrahi          #+#    #+#              #
-#    Updated: 2024/01/31 08:12:51 by ahibrahi         ###   ########.fr        #
+#    Updated: 2024/01/31 10:48:42 by ahibrahi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -g3 #-fsanitize=address
 AR = ar -rcs
 RM = rm -f
 
