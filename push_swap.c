@@ -17,7 +17,6 @@ void	ft_free(t_stack **stack_a, t_stack **stack_b)
 	t_stack		*p;
 	t_stack		*tmp;
 
-	p = NULL;
 	if (stack_a && *stack_a)
 	{
 		p = *stack_a;
