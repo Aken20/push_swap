@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:04:48 by ahibrahi          #+#    #+#             */
-/*   Updated: 2024/01/31 13:08:24 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/02/01 22:30:20 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_free(t_stack **stack_a, t_stack **stack_b)
 	t_stack		*p;
 	t_stack		*tmp;
 
-	p = NULL;
 	if (stack_a && *stack_a)
 	{
 		p = *stack_a;
@@ -104,7 +103,7 @@ int	main(int ac, char **av)
 	t_stack	*stack_b;
 
 	i = 1;
-	stack_a = NULL;
+	// stack_a = NULL;
 	stack_b = NULL;
 	if (ac > 1)
 	{
@@ -127,7 +126,8 @@ int	main(int ac, char **av)
 			exit(ft_printf(2, "Error\n"));
 		}
 		ft_check_dup(stack_a);
-		// stack_a = sort_stack(stack_a);
+		ft_check_if_sorted(&stack_a);
+		ft_sort_stack(&stack_a, &stack_b);
 		// sa(&stack_a);
 		// sb(&stack_b);
 		// ss(&stack_a, &stack_b);
@@ -139,14 +139,14 @@ int	main(int ac, char **av)
 		// rrr(&stack_a, &stack_b);
 		// pa(&stack_a, &stack_b);
 		// pb(&stack_a, &stack_b);
-		// while (stack_a)
-		// {
-		// 	ft_printf(1, "stack_a   %d\n", stack_a->data);
-		// 	stack_b = stack_a;
-		// 	stack_a = stack_a->next;
-		// 	free(stack_b);
-		// }
+		while (stack_a)
+		{
+			ft_printf(1, "stack_a   %d\n", stack_a->data);
+			stack_b = stack_a;
+			stack_a = stack_a->next;
+			free(stack_b);
+		}
 	}
-	ft_free(&stack_a, &stack_b);
+	// ft_free(&stack_a, &stack_b);
 	return (0);
 }

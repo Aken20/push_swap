@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:02:40 by ahibrahi          #+#    #+#             */
-/*   Updated: 2024/01/31 12:35:09 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/02/01 22:35:56 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_stack		*ft_stack_last(t_stack *stack_a);
 t_stack		*sort_stack(t_stack *stack_a);
 t_stack		*ft_new_node(int data);
 long long	ft_s_atoi(const char *str);
+int			ascending(int a, int b);
 void		ft_add_to_a(t_stack **stack_a, t_stack *new);
 void		sa(t_stack **stack_a);
 void		sb(t_stack **stack_b);
@@ -39,5 +40,10 @@ void		rrr(t_stack **stack_a, t_stack **stack_b);
 void		pa(t_stack **stack_a, t_stack **stack_b);
 void		pb(t_stack **stack_a, t_stack **stack_b);
 void		ft_free(t_stack **stack_a, t_stack **stack_b);
+void		ft_check_if_sorted(t_stack **stack_a);
+void		ft_sort_three(t_stack **stack_a);
+void		ft_sort_four(t_stack **stack_a, t_stack **stack_b);
+void		ft_sort_five(t_stack **stack_a, t_stack **stack_b);
+void		ft_sort_stack(t_stack **stack_a, t_stack **stack_b);
 
 #endif

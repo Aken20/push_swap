@@ -6,15 +6,15 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 08:06:20 by ahibrahi          #+#    #+#             */
-/*   Updated: 2024/01/31 12:35:02 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/02/01 12:17:23 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static	int	ascending(int a, int b)
+int	ascending(int a, int b)
 {
-	return (a <= b);
+	return (a < b);
 }
 
 t_stack	*sort_stack(t_stack *stack_a)
