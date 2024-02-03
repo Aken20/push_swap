@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:04:48 by ahibrahi          #+#    #+#             */
-/*   Updated: 2024/02/01 22:30:20 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/02/03 04:07:12 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,26 @@ void	ft_free(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
+void	ft_check_if_sorted(t_stack **stack_a, int i)
+{
+	t_stack	*p;
+
+	if (i < 2)
+	{
+		ft_free(stack_a, NULL);
+		exit(ft_printf(1, "Er9ror\n"));
+	}
+	p = *stack_a;
+	while (p && p->next && ascending(p, 1, 2))
+		p = p->next;
+	if (!p->next)
+	{
+		ft_free(stack_a, NULL);
+		exit(ft_printf(2, "Error\n"));
+	}
+	return ;
+}
+
 int	ft_check_dup(t_stack *stack_a)
 {
 	t_stack	*check;
@@ -68,7 +88,7 @@ int	ft_check_dup(t_stack *stack_a)
 	return (0);
 }
 
-int	ft_set_a(t_stack **stack_a, char **ad)
+void	ft_set_a(t_stack **stack_a, char **ad)
 {
 	int	i;
 
@@ -92,7 +112,6 @@ int	ft_set_a(t_stack **stack_a, char **ad)
 	while (ad[i])
 		free(ad[i++]);
 	free(ad);
-	return (1);
 }
 
 int	main(int ac, char **av)
@@ -103,7 +122,7 @@ int	main(int ac, char **av)
 	t_stack	*stack_b;
 
 	i = 1;
-	// stack_a = NULL;
+	stack_a = NULL;
 	stack_b = NULL;
 	if (ac > 1)
 	{
@@ -113,40 +132,13 @@ int	main(int ac, char **av)
 		{
 			ad = ft_split(av[i++], ' ');
 			if (!ad || !ad[0])
-			{
-				ft_set_a(&stack_a, ad);
-				ft_free(&stack_a, NULL);
-				exit(ft_printf(2, "Error\n"));
-			}
+				return (ft_set_a(&stack_a, ad),
+					ft_free(&stack_a, NULL), ft_printf(2, "Error\n"));
 			ft_set_a(&stack_a, ad);
 		}
-		if (i <= 2)
-		{
-			ft_free(&stack_a, NULL);
-			exit(ft_printf(2, "Error\n"));
-		}
 		ft_check_dup(stack_a);
-		ft_check_if_sorted(&stack_a);
+		ft_check_if_sorted(&stack_a, i);
 		ft_sort_stack(&stack_a, &stack_b);
-		// sa(&stack_a);
-		// sb(&stack_b);
-		// ss(&stack_a, &stack_b);
-		// ra(&stack_a);
-		// rb(&stack_b);
-		// rr(&stack_a, &stack_b);
-		// rra(&stack_a);
-		// rrb(&stack_b);
-		// rrr(&stack_a, &stack_b);
-		// pa(&stack_a, &stack_b);
-		// pb(&stack_a, &stack_b);
-		while (stack_a)
-		{
-			ft_printf(1, "stack_a   %d\n", stack_a->data);
-			stack_b = stack_a;
-			stack_a = stack_a->next;
-			free(stack_b);
-		}
 	}
-	// ft_free(&stack_a, &stack_b);
-	return (0);
+	return (ft_free(&stack_a, &stack_b), 0);
 }

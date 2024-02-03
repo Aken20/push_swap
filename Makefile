@@ -6,17 +6,17 @@
 #    By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 15:13:44 by ahibrahi          #+#    #+#              #
-#    Updated: 2024/02/01 12:29:06 by ahibrahi         ###   ########.fr        #
+#    Updated: 2024/02/03 04:19:09 by ahibrahi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3 #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address
 AR = ar -rcs
 RM = rm -f
 
-FILES =  push_swap ft_atoi rotate reverse_rotate swap push utilles sort_stack\
+FILES =  push_swap ft_atoi rotate reverse_rotate swap push utilles utilles_2 sort_stack\
 
 PRINTF = ft_printf/printf.a
 LIBFT = libft/libft.a

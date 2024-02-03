@@ -6,15 +6,17 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 08:06:20 by ahibrahi          #+#    #+#             */
-/*   Updated: 2024/02/01 12:17:23 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/02/03 04:14:43 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ascending(int a, int b)
+int	get_num(t_stack *stack, int target)
 {
-	return (a < b);
+	while (--target)
+		stack = stack->next;
+	return (stack->data);
 }
 
 t_stack	*sort_stack(t_stack *stack_a)
@@ -25,7 +27,7 @@ t_stack	*sort_stack(t_stack *stack_a)
 	tmp = stack_a;
 	while (stack_a->next != NULL)
 	{
-		if (!ascending(stack_a->data, stack_a->next->data))
+		if (!ascending(stack_a, 1, 2))
 		{
 			swap = stack_a->data;
 			stack_a->data = stack_a->next->data;
