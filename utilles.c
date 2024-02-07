@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 08:06:20 by ahibrahi          #+#    #+#             */
-/*   Updated: 2024/02/03 04:14:43 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/02/06 07:30:28 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,9 @@ int	get_num(t_stack *stack, int target)
 	return (stack->data);
 }
 
-t_stack	*sort_stack(t_stack *stack_a)
+int	ascending(t_stack *stack, int target1, int target2)
 {
-	int		swap;
-	t_stack	*tmp;
-
-	tmp = stack_a;
-	while (stack_a->next != NULL)
-	{
-		if (!ascending(stack_a, 1, 2))
-		{
-			swap = stack_a->data;
-			stack_a->data = stack_a->next->data;
-			stack_a->next->data = swap;
-			stack_a = tmp;
-		}
-		else
-			stack_a = stack_a->next;
-	}
-	stack_a = tmp;
-	return (stack_a);
+	return (get_num(stack, target1) < get_num(stack, target2));
 }
 
 t_stack	*ft_stack_last(t_stack *stack_a)

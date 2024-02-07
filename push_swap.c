@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:04:48 by ahibrahi          #+#    #+#             */
-/*   Updated: 2024/02/03 04:07:12 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/02/06 07:28:51 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,20 +48,20 @@ void	ft_check_if_sorted(t_stack **stack_a, int i)
 	if (i < 2)
 	{
 		ft_free(stack_a, NULL);
-		exit(ft_printf(1, "Er9ror\n"));
+		exit(0);
 	}
 	p = *stack_a;
-	while (p && p->next && ascending(p, 1, 2))
+	while (p && p->next && p->data < p->next->data)
 		p = p->next;
 	if (!p->next)
 	{
 		ft_free(stack_a, NULL);
-		exit(ft_printf(2, "Error\n"));
+		exit(0);
 	}
 	return ;
 }
 
-int	ft_check_dup(t_stack *stack_a)
+static int	ft_check_dup(t_stack *stack_a)
 {
 	t_stack	*check;
 	t_stack	*check2;
@@ -95,9 +95,9 @@ void	ft_set_a(t_stack **stack_a, char **ad)
 	i = 0;
 	while (ad && ad[i])
 	{
-		if (ft_s_atoi(ad[i]) != 21474836479)
-			ft_add_to_a(stack_a, ft_new_node(ft_s_atoi(ad[i])));
-		else if (ft_s_atoi(ad[i]) == 21474836479)
+		if (ft_atoi(ad[i]) != 21474836479)
+			ft_add_to_a(stack_a, ft_new_node(ft_atoi(ad[i])));
+		else if (ft_atoi(ad[i]) == 21474836479)
 		{
 			i = 0;
 			while (ad[i])

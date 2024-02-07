@@ -6,45 +6,41 @@
 #    By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 15:13:44 by ahibrahi          #+#    #+#              #
-#    Updated: 2024/02/03 04:19:09 by ahibrahi         ###   ########.fr        #
+#    Updated: 2024/02/06 07:04:40 by ahibrahi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 AR = ar -rcs
 RM = rm -f
 
-FILES =  push_swap ft_atoi rotate reverse_rotate swap push utilles utilles_2 sort_stack\
+FILES =  push_swap ft_atoi ft_split rotate reverse_rotate swap push utilles sort_stack radix\
 
 PRINTF = ft_printf/printf.a
-LIBFT = libft/libft.a
 
 SRCS = $(addsuffix .c, $(FILES))
 OBJS = $(addsuffix .o, $(FILES))
 
 all: $(NAME)
 
-$(PRINTF):
-	make -C ft_printf
-$(LIBFT):
-	make -C libft
-
 %.o: %.c
 	$(CC) -Wall -Wextra -Werror -c $< -o $@
 
-$(NAME): $(OBJS) $(PRINTF) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(PRINTF) -o $(NAME)
+$(NAME): $(OBJS) $(PRINTF)
+	$(CC) $(CFLAGS) $(OBJS) $(PRINTF) -o $(NAME)
+
+$(PRINTF):
+	make -C ft_printf
 
 clean:
 	make clean -C ft_printf
-	make clean -C libft
 	$(RM) $(OBJS) $(BOBJS)
 
 fclean: clean
-	$(RM) $(NAME) $(NAME)_bonus $(PRINTF) $(LIBFT)
+	$(RM) $(NAME) $(PRINTF)
 
 re: clean all
 
-.PHONY: bonus all clean fclean re
+.PHONY: all clean fclean re

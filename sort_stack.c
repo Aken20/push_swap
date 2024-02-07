@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:10:54 by ahibrahi          #+#    #+#             */
-/*   Updated: 2024/02/03 04:12:50 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/02/06 07:23:32 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,5 +121,7 @@ void	ft_sort_stack(t_stack **stack_a, t_stack **stack_b)
 		ft_sort_four(stack_a, stack_b);
 	else if (ft_stack_size(*stack_a) == 5)
 		ft_sort_five(stack_a, stack_b);
+	else
+		ft_radix(stack_a, stack_b);
 	return ;
 }

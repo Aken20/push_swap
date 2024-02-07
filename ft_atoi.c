@@ -6,11 +6,23 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 13:32:26 by ahibrahi          #+#    #+#             */
-/*   Updated: 2024/01/31 10:35:07 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/02/07 04:38:09 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_strlen(const char *s)
+{
+	int		i;
+
+	i = 0;
+	if (!s)
+		return (0);
+	while (s[i])
+		i++;
+	return (i);
+}
 
 static	long long	ft_check(const char *str)
 {
@@ -38,7 +50,7 @@ static	long long	ft_check(const char *str)
 	return (2);
 }
 
-long long	ft_s_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
 	int			s;
 	long long	aoi;
