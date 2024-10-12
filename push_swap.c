@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:04:48 by ahibrahi          #+#    #+#             */
-/*   Updated: 2024/02/06 07:28:51 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/02/08 10:10:15 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static int	ft_check_dup(t_stack *stack_a)
 				if (check2->data == check->data)
 				{
 					ft_free(&stack_a, NULL);
-					exit(ft_printf(1, "Error\n"));
+					exit(ft_printf(2, "Error\n"));
 				}
 			}
 			check = check->next;

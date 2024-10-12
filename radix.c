@@ -6,13 +6,13 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 15:29:33 by ahibrahi          #+#    #+#             */
-/*   Updated: 2024/02/06 07:19:22 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/02/08 12:30:47 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_check(t_stack **stack_a)
+int	ft_check(t_stack **stack_a)
 {
 	t_stack	*p;
 
@@ -27,7 +27,7 @@ static int	ft_check(t_stack **stack_a)
 	return (0);
 }
 
-static int	ft_get_min(t_stack **stack_a)
+int	ft_get_min(t_stack **stack_a)
 {
 	int		i;
 	t_stack	*p;

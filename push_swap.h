@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:02:40 by ahibrahi          #+#    #+#             */
-/*   Updated: 2024/02/06 07:30:50 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/02/08 12:31:05 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ long long	ft_atoi(const char *str);
 int			ascending(t_stack *stack, int target1, int target2);
 int			get_num(t_stack *stack, int target);
 int			ft_stack_size(t_stack *stack_a);
+int			ft_get_min(t_stack **stack_a);
 int			ft_strlen(const char *s);
+int			ft_check(t_stack **stack_a);
 char		**ft_split(char const *s, char c);
 void		ft_add_to_a(t_stack **stack_a, t_stack *new);
 void		sa(t_stack **stack_a);

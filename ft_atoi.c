@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 13:32:26 by ahibrahi          #+#    #+#             */
-/*   Updated: 2024/02/07 04:38:09 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/02/08 12:28:10 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_strlen(const char *s)
 	return (i);
 }
 
-static	long long	ft_check(const char *str)
+static	long long	ft_atoi_check(const char *str)
 {
 	long long	i;
 	long long	c;
@@ -60,7 +60,7 @@ long long	ft_atoi(const char *str)
 	s = 1;
 	if (str[i] == 0)
 		return (0);
-	if (ft_check(str) != 2)
+	if (ft_atoi_check(str) != 2)
 		return (21474836479);
 	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
 		++i;

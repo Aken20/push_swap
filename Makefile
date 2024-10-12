@@ -6,7 +6,7 @@
 #    By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 15:13:44 by ahibrahi          #+#    #+#              #
-#    Updated: 2024/02/06 07:04:40 by ahibrahi         ###   ########.fr        #
+#    Updated: 2024/02/08 12:43:28 by ahibrahi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJS = $(addsuffix .o, $(FILES))
 all: $(NAME)
 
 %.o: %.c
-	$(CC) -Wall -Wextra -Werror -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS) $(PRINTF)
 	$(CC) $(CFLAGS) $(OBJS) $(PRINTF) -o $(NAME)
@@ -36,7 +36,7 @@ $(PRINTF):
 
 clean:
 	make clean -C ft_printf
-	$(RM) $(OBJS) $(BOBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME) $(PRINTF)

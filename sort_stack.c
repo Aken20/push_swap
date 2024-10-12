@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:10:54 by ahibrahi          #+#    #+#             */
-/*   Updated: 2024/02/06 07:23:32 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/02/08 12:32:49 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,7 @@ void	ft_sort_four(t_stack **stack_a, t_stack **stack_b)
 	int		i;
 
 	p = *stack_a;
-	i = p->data;
-	while (p)
-	{
-		if (i > p->data)
-			i = p->data;
-		p = p->next;
-	}
-	p = *stack_a;
+	i = ft_get_min(stack_a);
 	if (ft_stack_last(p)->data == i)
 		rra(stack_a);
 	else
@@ -77,6 +70,8 @@ void	ft_sort_four(t_stack **stack_a, t_stack **stack_b)
 			p = *stack_a;
 		}
 	}
+	if (!ft_check(stack_a))
+		return ;
 	pb(stack_a, stack_b);
 	ft_sort_three(stack_a);
 	pa(stack_a, stack_b);
@@ -88,14 +83,7 @@ void	ft_sort_five(t_stack **stack_a, t_stack **stack_b)
 	int		i;
 
 	p = *stack_a;
-	i = p->data;
-	while (p)
-	{
-		if (i > p->data)
-			i = p->data;
-		p = p->next;
-	}
-	p = *stack_a;
+	i = ft_get_min(stack_a);
 	if (ft_stack_last(p)->data == i)
 		rra(stack_a);
 	else
